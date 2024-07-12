@@ -10,8 +10,9 @@ const port = process.env.PORT || 3001;
 app.use(bodyParser.json());
 app.use(cors());
 
+
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/samorganic', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://ammadaslam07:psTC4HJulpWy6a4B@cluster0.2byxz3d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
