@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const Order = require('../models/Order');
+const sendemail = require('../utilis/sendemail');
 
 // Create a new order
 router.post('/', async (req, res) => {
     const order = new Order(req.body);
     try {
         await order.save();
+        sendemail(order);
         res.status(201).send(order);
     } catch (error) {
         res.status(400).send(error);
