@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 // Create a transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
   host: 'smtpout.secureserver.net' , 
-  port: 993,
+  port: 465,
   secure: true,
   auth: {
     user: "info@samorganic.co",
